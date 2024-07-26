@@ -12,7 +12,6 @@
       body {
         height: 100%;
         margin: 0;
-        background: url('https://i.imgur.com/hc3609h.jpeg') no-repeat center center fixed;
         background-size: cover;
         color: #e0e0e0;
       }
@@ -160,6 +159,16 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script>
       window.onload = () => {
+        const backgrounds = [
+          'https://i.imgur.com/Te15GOt.jpeg',
+          'https://i.imgur.com/botj7Bj.jpeg',
+          'https://i.imgur.com/7nQWVqr.jpeg',
+          'https://i.imgur.com/mfpgCGU.jpeg'
+        ];
+        const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+        document.body.style.backgroundImage = `url('${randomBackground}')`;
+        
+      
         let info = document.getElementById("info");
         const queryParams = new URLSearchParams(window.location.search);
         const dataString = queryParams.get('data');
@@ -242,11 +251,11 @@
             if (value < 1024) {
                 return value + ' Kb/s';
             } else if (value < 1024 * 1024) {
-                return (value / 1024).toFixed(1) + ' MB/s';
+                return (value / 1024).toFixed(2) + ' MB/s';
             } else if (value < 1024 * 1024 * 1024) {
-                return (value / (1024 * 1024)).toFixed(1) + ' GB/s';
+                return (value / (1024 * 1024)).toFixed(2) + ' GB/s';
             } else {
-                return (value / (1024 * 1024 * 1024)).toFixed(1) + ' TB/s';
+                return (value / (1024 * 1024 * 1024)).toFixed(2) + ' TB/s';
             }
         }
 
@@ -269,7 +278,7 @@
             animation: false,
           },
           title: {
-            text: 'Davinci Count 2.0',
+            text: 'Davinci Graph With Love <3',
             style: {
               color: '#000000', 
             }
