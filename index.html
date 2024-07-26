@@ -242,11 +242,11 @@
             if (value < 1024) {
                 return value + ' Kb/s';
             } else if (value < 1024 * 1024) {
-                return (value / 1024).toFixed(2) + ' MB/s';
+                return (value / 1024).toFixed(1) + ' MB/s';
             } else if (value < 1024 * 1024 * 1024) {
-                return (value / (1024 * 1024)).toFixed(2) + ' GB/s';
+                return (value / (1024 * 1024)).toFixed(1) + ' GB/s';
             } else {
-                return (value / (1024 * 1024 * 1024)).toFixed(2) + ' TB/s';
+                return (value / (1024 * 1024 * 1024)).toFixed(1) + ' TB/s';
             }
         }
 
@@ -269,7 +269,7 @@
             animation: false,
           },
           title: {
-            text: 'Davinci Graph With Love <3',
+            text: 'Davinci Count 2.0',
             style: {
               color: '#000000', 
             }
