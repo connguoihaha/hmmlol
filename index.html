@@ -99,7 +99,7 @@
 
       .side-container i {
           color: #000000; 
-          margin-left: 28px; 
+          margin-left: 22px; 
           margin-right: 5px; 
           font-size: 38px; 
           position: relative; 
@@ -112,7 +112,7 @@
         font-family: sans-serif; 
         font-weight: bold; 
         position: absolute; 
-        right: 20px; 
+        right: 14px; 
         top: 36px; 
         white-space: nowrap;
         text-align: right;
@@ -200,7 +200,7 @@
                 kbs /= 1024;
                 index++;
             }
-            return kbs.toFixed(2).replace(/\.00$/, '') + " " + units[index];
+            return kbs.toFixed(1).replace(/\.00$/, '') + " " + units[index];
         }
 
         function formatNumber2(kbs) {
@@ -211,7 +211,7 @@
                 kbs /= 1024;
                 index++;
             }
-            return kbs.toFixed(2).replace(/\.00$/, '') + " " + units[index];
+            return kbs.toFixed(1).replace(/\.00$/, '') + " " + units[index];
         }
 
         function formatNumberPPS(value) {
@@ -242,11 +242,11 @@
             if (value < 1024) {
                 return value + ' Kb/s';
             } else if (value < 1024 * 1024) {
-                return (value / 1024).toFixed(2) + ' MB/s';
+                return (value / 1024).toFixed(1) + ' MB/s';
             } else if (value < 1024 * 1024 * 1024) {
-                return (value / (1024 * 1024)).toFixed(2) + ' GB/s';
+                return (value / (1024 * 1024)).toFixed(1) + ' GB/s';
             } else {
-                return (value / (1024 * 1024 * 1024)).toFixed(2) + ' TB/s';
+                return (value / (1024 * 1024 * 1024)).toFixed(1) + ' TB/s';
             }
         }
 
@@ -269,7 +269,7 @@
             animation: false,
           },
           title: {
-            text: 'Davinci Graph With Love <3',
+            text: 'Davinci Count 2.0',
             style: {
               color: '#000000', 
             }
